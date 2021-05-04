@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#
+#   @note Please refer to https://wiki.osdev.org/GCC_Cross_Compiler
+#           for details on what is going on here.
+#
+#
+
 mkdir cross 
 cd cross
 
@@ -17,7 +23,7 @@ tar -xvf binutils-2.30.tar.gz
 mkdir build-binutils
 cd build-binutils
 
-../binutils-2.30/configure --target=$TARGET --prefix="$PREFIX" --disable-nls 
+../binutils-2.30/configure --target=$TARGET --prefix="$PREFIX" --disable-nls  --with-sysroot --disable-werror
 
 make && make install
 
