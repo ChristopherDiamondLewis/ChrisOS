@@ -46,6 +46,8 @@ mv mpfr-4.1.0 gcc-7.5.0/mpfr
 mv mpc-1.2.1 gcc-7.5.0/mpc
 
 
+../gcc-7.5.0/configure --target=$TARGET --prefix="$PREFIX" --disable-nls --enable-languages=c,c++ --without-headers
+
 make all-gcc && make all-target-libgcc && make install-gcc && make install-target-libgcc
 
 
